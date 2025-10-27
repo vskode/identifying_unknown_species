@@ -1,0 +1,9 @@
+*dataset
+*bacpipe_results*
+target_species
+.env*
+.vscode*
+*~lock*
+*checkpoints/*
+bacpipe/model_checkpoints
+data/
