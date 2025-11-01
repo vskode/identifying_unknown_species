@@ -82,36 +82,81 @@ import h5py
 from tqdm import tqdm
 import librosa as lb
 
-def get_audio(file, start, end, src_dir):
+
+def get_audio(file, target_start, target_end, src_dir, other_target_segments):
     path = list(src_dir.rglob(file))[0]
     raw_audio, sr = lb.load(path)
     
-    start_idx, end_idx = int(start*sr), int(end*sr)
+    # get all the start and end positions of target segments
+    segment_indices = [(target_start, target_end), *other_target_segments]
+    segment_indices.sort()
+    segments = []
+    
+    # extract the segments from the raw audio corresponding to
+    # before, during and after the target segment
+    # as well as segments in between annotated segments
+    # and other annotated segments
+    last_end = 0
+    for idx, (start, end) in enumerate(segment_indices):
+        if start == target_start:
+            target_idx = idx
+        start, end = int(start*sr), int(end*sr)
+        segments.append(raw_audio[last_end:start])
+        segments.append(raw_audio[start:end])
+        last_end = end
+    
+    # create a dictionary where we store the segments and their corresponding starting times
     audio_dict = dict()
-    audio_dict['before'] = raw_audio[:start_idx]
-    audio_dict['after'] = raw_audio[end_idx:]
-    audio_dict['during'] = raw_audio[start_idx:end_idx]
+    audio_dict['during'] = {'audio': segments[2*target_idx + 1], 'start': target_start}
+    audio_dict['before'] = {'audio': segments[0], 'start': 0}
+    
+    # these are the segments inbetween annotated segments
+    for i in range(int(len(segments)/2)):
+        if i > 0 and i != target_idx and len(segments[2*i]) > sr:
+            audio_dict[i] = {'audio': segments[2*i],
+                             'start': segment_indices[i-1][1]}
+            
+    audio_dict['after'] = {'audio': raw_audio[last_end:], 'start': last_end/sr}
     
     audio_padded_dict = dict()
-    audio_padded_dict['before'] = []
-    audio_padded_dict['after'] = []
-    audio_padded_dict['during'] = []
+    starts = []
     
-    for key, audio in audio_dict.items():
+    # now create a dictionary where we create padded segments each corresponding to the
+    # GLOBAL_LENGTH and named the same way as the previous dictionary
+    for key, d in audio_dict.items():
+        audio = d['audio']
         if len(audio) == 0:
             continue
         nr_windows = int(np.ceil(len(audio) / sr / GLOBAL_LENGTH))
-        audio_padded_dict[f"{key}"] = lb.util.fix_length(
+        audio_padded_dict[key] = lb.util.fix_length(
                 audio,
                 size=nr_windows * GLOBAL_LENGTH * sr,
                 mode='minimum',
             ).reshape(nr_windows, -1)
-    return (audio_padded_dict['before'], audio_padded_dict['during'], audio_padded_dict['after']), sr
+        if not key == 'during':
+            starts.extend(np.arange(nr_windows) * GLOBAL_LENGTH + d['start'])
+    starts.sort()
+    
+    # create a context_audio list that contains all context audio segments
+    context_audio = []
+    if 'before' in audio_padded_dict:
+        context_audio.extend(audio_padded_dict['before'])
+    for k, aud in audio_padded_dict.items():
+        if isinstance(k, int):
+            context_audio.extend(aud)
+    if 'after' in audio_padded_dict:
+        context_audio.extend(audio_padded_dict['after'])
+    # ensure the number of starting points and the context audio segments line up
+    assert len(context_audio) == len(starts)
+    return (audio_padded_dict['during'], context_audio, starts), sr
 
 # get all target embeddings
 
-def get_random_within_file_windows(before, during, after, data):
-    combined = np.vstack([*before, *after])
+def get_random_within_file_windows(context, starts, data):
+    if len(context) > 0:
+        combined = np.vstack(context)
+    else:
+        return []
     if len(combined) >= RATIO_WITHIN_FILE:
         idxs = np.random.choice(range(len(combined)), 
                                 size = RATIO_WITHIN_FILE,
@@ -121,49 +166,58 @@ def get_random_within_file_windows(before, during, after, data):
                                 size = RATIO_WITHIN_FILE)
     # write the index of the embedding to data['embed_idx']
     for idx in idxs:
-        # if the index is bigger than the number of segments before the event
-        # offset it by the number of event segments
-        if idx >= len(before):
-            idx += len(during)
-        data['embed_idx'].append(idx)
+        data['start'].append(starts[idx])
+        data['end'].append(starts[idx] + GLOBAL_LENGTH)
     
     return combined[idxs].tolist()
 
+def get_other_target_segments_from_same_file(df, current_idx):
+    starts, ends = [], []
+    for idx, event in df.iterrows():
+        if idx == current_idx:
+            continue
+        else:
+            starts.append(event.start)
+            ends.append(event.end)
+    return list(zip(starts, ends))
+        
+
 def get_target_audio(dataset, data, df, src_dir):
     for idx, event in tqdm(df.iterrows(), total=len(df)):
-        audio_tup, sr = get_audio(event.wavfilename, event.start, 
-                                event.end, src_dir)
+        # get other events in same file with different timestamps
+        other_target_segments = []
+        if len(df[df['wavfilename']==event.wavfilename]) > 1:
+            df_with_same_filename = df[df['wavfilename']==event.wavfilename]
+            other_target_segments = get_other_target_segments_from_same_file(df_with_same_filename, idx)
+            
+        audio_tup, sr = get_audio(
+            event.wavfilename, 
+            event.start, 
+            event.end, 
+            src_dir,
+            other_target_segments
+            )
         
-        before, during, after = audio_tup
+        during, context, starts = audio_tup
 
         data['audio'].extend(during.tolist())
         
         data['sample_rate'].extend([sr] * len(during))
         data['dataset'].extend([dataset] * len(during))
         data['filename'].extend([event.wavfilename] * len(during))
-        data['embed_idx'].extend((
-            # get a list corresponding to the number of embeddings
-            np.arange(len(during)) 
-            # offset that list by the length of the number of segments preceding the event
-            + len(before) 
-            ).tolist())
         data['start'].extend([event.start] * len(during))
         data['end'].extend([event.end] * len(during))
         data['length_of_annotation'].extend([event.end - event.start] * len(during))
         data['label'].extend([event.species] * len(during))
         
-        # get other events in same file with different timestamps
-        
-        windows = get_random_within_file_windows(before, during, after, data)
+        windows = get_random_within_file_windows(context, starts, data)
         data['audio'].extend(windows)
         
-        data['label'].extend(['within_file'] * RATIO_WITHIN_FILE)
-        data['dataset'].extend([dataset] * RATIO_WITHIN_FILE)
-        data['filename'].extend([event.wavfilename] * RATIO_WITHIN_FILE)
-        data['sample_rate'].extend([sr] * RATIO_WITHIN_FILE)
-        data['start'].extend([np.nan] * RATIO_WITHIN_FILE)
-        data['end'].extend([np.nan] * RATIO_WITHIN_FILE)
-        data['length_of_annotation'].extend([np.nan] * RATIO_WITHIN_FILE)
+        data['label'].extend(['within_file'] * len(windows))
+        data['dataset'].extend([dataset] * len(windows))
+        data['filename'].extend([event.wavfilename] * len(windows))
+        data['sample_rate'].extend([sr] * len(windows))
+        data['length_of_annotation'].extend([np.nan] * len(windows))
     return data
 
 def get_context_file_audio(dataset):
@@ -249,8 +303,6 @@ def get_random_diff_file_windows(all_context, data, dataset):
     data['dataset'].extend([dataset] * nr_diff_file_wins)
         
     # Nan for all noise segments
-    data['start'].extend([np.nan] * nr_diff_file_wins)
-    data['end'].extend([np.nan] * nr_diff_file_wins)
     data['length_of_annotation'].extend([np.nan] * nr_diff_file_wins)
     
     
@@ -263,7 +315,8 @@ def get_random_diff_file_windows(all_context, data, dataset):
     
     # get the indices of each context segment relative to the file they originate from
     embed_idxs = get_embed_idxs_relative_to_files(idxs, all_context)
-    data['embed_idx'].extend(embed_idxs)
+    data['start'].extend((np.array(embed_idxs) * GLOBAL_LENGTH).tolist())
+    data['end'].extend(((np.array(embed_idxs)+1) * GLOBAL_LENGTH).tolist())
     
     return data
 
@@ -275,7 +328,6 @@ def write_dataset_to_file(file, data):
     labels = np.array([m.encode("utf8") for m in data['label']])
     datasets = np.array([m.encode("utf8") for m in data['dataset']])
     sample_rates = np.array([m for m in data['sample_rate']])
-    embed_idxs = np.array([m for m in data['embed_idx']])
     starts = np.array([m for m in data['start']])
     ends = np.array([m for m in data['end']])
     length_of_annotations = np.array([m for m in data['length_of_annotation']])
@@ -283,7 +335,6 @@ def write_dataset_to_file(file, data):
     file.create_dataset("filenames", data=filenames)
     file.create_dataset("labels", data=labels)
     file.create_dataset("sample_rates", data=sample_rates)
-    file.create_dataset("embed_idxs", data=embed_idxs)
     file.create_dataset("datasets", data=datasets)
     file.create_dataset("starts", data=starts)
     file.create_dataset("ends", data=ends)
@@ -306,7 +357,6 @@ def collect_audio_segments():
         'start': [],
         'end': [],
         'length_of_annotation': [],
-        'embed_idx': [],
     }
     
     for dataset in ['arctic', 'wabad', 'anura']:
