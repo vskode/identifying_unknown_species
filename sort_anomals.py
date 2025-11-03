@@ -12,7 +12,7 @@ SRCS = {
     }
 
 RATIO_WITHIN_FILE = 2
-RATIO_DIFF_FILE = 2
+RATIO_DIFF_FILE = 4
 
 np.random.seed(SEED)
 
@@ -152,18 +152,38 @@ def get_audio(file, target_start, target_end, src_dir, other_target_segments):
 
 # get all target embeddings
 
+def remove_segments_that_are_already_context(starts, data, combined):
+    prev_starts = np.array(data['start'])[
+        np.array(data['filename'])==np.array(data['filename'][-1])
+        ]
+    remove = []
+    for i in range(len(combined)):
+        if starts[i] in prev_starts:
+            remove.append((starts[i], combined[i]))
+    for start, combine in remove:
+        starts.remove(start)
+        combined.remove(combine)
+    
+
 def get_random_within_file_windows(context, starts, data):
     if len(context) > 0:
         combined = np.vstack(context)
     else:
         return []
+    
+    combined = combined.tolist()
+    remove_segments_that_are_already_context(starts, data, combined)
+    combined = np.array(combined)
+
+            
     if len(combined) >= RATIO_WITHIN_FILE:
         idxs = np.random.choice(range(len(combined)), 
                                 size = RATIO_WITHIN_FILE,
                                 replace=False)
+    elif len(combined) == 0:
+        return []
     else:
-        idxs = np.random.randint(len(combined), 
-                                size = RATIO_WITHIN_FILE)
+        idxs = list(range(len(combined)))
     # write the index of the embedding to data['embed_idx']
     for idx in idxs:
         data['start'].append(starts[idx])
@@ -320,25 +340,32 @@ def get_random_diff_file_windows(all_context, data, dataset):
     
     return data
 
-def write_dataset_to_file(file, data):
-    file.create_dataset("audio", data=data['audio'])  # no compression
+def write_dataset_to_file(file, data, chunk_size=500):
+    # --- Audio ---
+    audio_data = np.array(data['audio'])
+    n_samples = len(audio_data)
+    shape = audio_data.shape
+    dtype = audio_data.dtype
 
-    # Store metadata as fixed-length strings for fast reads
-    filenames = np.array([m.encode("utf8") for m in data['filename']])
-    labels = np.array([m.encode("utf8") for m in data['label']])
-    datasets = np.array([m.encode("utf8") for m in data['dataset']])
-    sample_rates = np.array([m for m in data['sample_rate']])
-    starts = np.array([m for m in data['start']])
-    ends = np.array([m for m in data['end']])
-    length_of_annotations = np.array([m for m in data['length_of_annotation']])
+    dset = file.create_dataset(
+        "audio",
+        shape=shape,
+        dtype=dtype,
+        chunks=(min(chunk_size, n_samples),) + shape[1:]
+    )
 
-    file.create_dataset("filenames", data=filenames)
-    file.create_dataset("labels", data=labels)
-    file.create_dataset("sample_rates", data=sample_rates)
-    file.create_dataset("datasets", data=datasets)
-    file.create_dataset("starts", data=starts)
-    file.create_dataset("ends", data=ends)
-    file.create_dataset("length_of_annotations", data=length_of_annotations)
+    for i in range(0, n_samples, chunk_size):
+        dset[i:i+chunk_size] = audio_data[i:i+chunk_size]
+
+    # --- Metadata ---
+    dt = h5py.string_dtype(encoding="utf-8")
+    file.create_dataset("filenames", data=data['filename'], dtype=dt)
+    file.create_dataset("labels", data=data['label'], dtype=dt)
+    file.create_dataset("datasets", data=data['dataset'], dtype=dt)
+    file.create_dataset("sample_rates", data=data['sample_rate'])
+    file.create_dataset("starts", data=data['start'])
+    file.create_dataset("ends", data=data['end'])
+    file.create_dataset("length_of_annotations", data=data['length_of_annotation'])
 
     file.attrs["description"] = f"""
     Dataset of species vocalizations unknown to all models. 
@@ -391,5 +418,5 @@ def read_dataset():
         
     print('loaded')
     
-create_dataset()
 # copy_target_and_context_files()
+create_dataset()
