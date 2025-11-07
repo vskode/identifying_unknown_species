@@ -6,4 +6,6 @@ target_species
 *~lock*
 *checkpoints/*
 bacpipe/model_checkpoints
-data/
+data/context
+data/target_species
+*.h5
