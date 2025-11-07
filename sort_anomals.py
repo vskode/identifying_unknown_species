@@ -12,7 +12,7 @@ SRCS = {
     }
 
 RATIO_WITHIN_FILE = 2
-RATIO_DIFF_FILE = 4
+RATIO_DIFF_FILE = 2
 
 np.random.seed(SEED)
 
