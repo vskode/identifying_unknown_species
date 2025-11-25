@@ -1,140 +1,232 @@
-,start,end,species,wavfilename
-1,40.88419548,42.43997479,Pogoniulus coryphaea,BAM_20151116_090813.wav
-2,47.93570726,50.72648122,Pogoniulus coryphaea,BAM_20151116_090813.wav
-4,10.03601918,11.20946142,Linurgus olivaceus,BAM_20151116_090816.wav
-5,13.27842537,14.05042685,Linurgus olivaceus,BAM_20151116_090816.wav
-6,19.13019655,21.05729718,Linurgus olivaceus,BAM_20151116_090816.wav
-7,25.28786526,28.65379169,Linurgus olivaceus,BAM_20151116_090816.wav
-8,25.32760662,28.69099292,Linurgus olivaceus,BAM_20151116_090816.wav
-9,30.18867578,32.09033954,Linurgus olivaceus,BAM_20151116_090816.wav
-10,46.08994019,47.47649438,Pogoniulus coryphaea,BAM_20151123_071111.wav
-11,5.651050798,8.615536463,Bradypterus bangwaensis,BAM_20151123_071114.wav
-12,14.57538785,19.14563658,Bradypterus bangwaensis,BAM_20151123_071114.wav
-13,28.6258147,33.72102443,Bradypterus bangwaensis,BAM_20151123_071114.wav
-14,46.50536886,47.22755237,Bradypterus bangwaensis,BAM_20151123_071114.wav
-15,51.35353813,59.89214186,Crithagra burtoni,BAM_20151123_071114.wav
-16,41.23277311,44.44259148,Pogoniulus coryphaea,BAM_20151123_081114.wav
-17,2.785513215,6.044563676,Pogoniulus coryphaea,BAM_20151123_081117.wav
-18,32.25624303,32.90377315,Pogoniulus coryphaea,BAM_20151123_081117.wav
-19,42.48593861,49.39401138,Pogoniulus coryphaea,BAM_20151123_081117.wav
-20,56.88704193,59.50542435,Pogoniulus coryphaea,BAM_20151123_081117.wav
-21,31.59415699,34.60309216,Pogoniulus coryphaea,BAM_20151123_091115.wav
-22,40.88519812,42.39832102,Crithagra burtoni,BAM_20151123_091116.wav
-23,0.972721859,1.574883009,Bradypterus bangwaensis,BAM_20151130_061312.wav
-24,2.617085001,3.713327095,Bradypterus bangwaensis,BAM_20151130_061312.wav
-25,13.82703959,17.01491251,Bradypterus bangwaensis,BAM_20151130_061312.wav
-26,21.15284042,24.79668738,Bradypterus bangwaensis,BAM_20151130_061312.wav
-27,30.11038667,33.34098197,Bradypterus bangwaensis,BAM_20151130_061312.wav
-28,36.69146838,41.74035802,Bradypterus bangwaensis,BAM_20151130_061312.wav
-29,45.98636614,50.32501443,Bradypterus bangwaensis,BAM_20151130_061312.wav
-30,55.11258243,59.59019098,Bradypterus bangwaensis,BAM_20151130_061312.wav
-31,45.9681877,46.54206539,Crithagra burtoni,BAM_20151130_061315.wav
-32,22.19769471,23.59451705,Bradypterus bangwaensis,BAM_20151130_061319.wav
-33,11.76360015,14.57407401,Crithagra burtoni,BAM_20151130_061319.wav
-34,24.0142619,25.39466545,Crithagra burtoni,BAM_20151130_061319.wav
-35,19.51619729,20.79771974,Crithagra burtoni,BAM_20151130_071314.wav
-36,26.86565134,27.97733346,Crithagra burtoni,BAM_20151130_071314.wav
-37,11.39474177,16.7987521,Pogoniulus coryphaea,BAM_20151130_071314.wav
-38,12.48261221,15.84904462,Pogoniulus coryphaea,BAM_20151130_071315.wav
-45,47.14830151,49.48469992,Bradypterus bangwaensis,BAM_20151130_081316.wav
-50,48.09250864,49.94340698,Pogoniulus coryphaea,BAM_20151130_091318.wav
-51,25.60625739,26.36231959,Crithagra burtoni,BAM_20151207_071712.wav
-52,45.80173523,46.81457326,Crithagra burtoni,BAM_20151207_071712.wav
-53,18.62834143,20.29818517,Bradypterus bangwaensis,BAM_20151207_071713.wav
-54,20.39073009,27.4549921,Pogoniulus coryphaea,BAM_20151207_071713.wav
-55,0,1.744723334,Crithagra burtoni,BAM_20151207_081721.wav
-56,3.983527612,8.492016227,Crithagra burtoni,BAM_20151207_081721.wav
-57,11.51826201,15.23930912,Crithagra burtoni,BAM_20151207_081721.wav
-58,17.58175706,18.41551865,Bradypterus bangwaensis,BAM_20151207_081721.wav
-59,21.36456429,41.2050022,Crithagra burtoni,BAM_20151207_081721.wav
-60,42.05420381,58.68311558,Crithagra burtoni,BAM_20151207_081721.wav
-61,0,19.35731185,Crithagra burtoni,BAM_20151207_091711.wav
-62,21.82517631,26.99226752,Crithagra burtoni,BAM_20151207_091711.wav
-63,30.53001153,36.2986447,Crithagra burtoni,BAM_20151207_091711.wav
-64,6.639212686,8.492016227,Bradypterus bangwaensis,BAM_20151207_091718.wav
-65,49.09929382,51.10649766,Linurgus olivaceus,BAM_20151207_091718.wav
-66,27.19069129,28.4468761,Crithagra burtoni,BAM_20151207_091719.wav
-67,9.294897761,12.90786466,Bradypterus bangwaensis,BAM_20151214_062006.wav
-68,22.38804278,24.36436656,Linurgus olivaceus,BAM_20151214_062006.wav
-69,13.12402508,14.79154826,Crithagra burtoni,BAM_20151214_062006.wav
-70,43.10685543,46.01926584,Crithagra burtoni,BAM_20151214_072003.wav
-71,58.43316905,59.59526566,Crithagra burtoni,BAM_20151214_082015.wav
-72,25.68912272,34.9099416,Linurgus olivaceus,BAM_20151214_092010.wav
-73,38.86864599,42.35876902,Linurgus olivaceus,BAM_20151214_092010.wav
-74,47.74760137,49.36878506,Linurgus olivaceus,BAM_20151214_092010.wav
-75,50.03126212,54.67937351,Linurgus olivaceus,BAM_20151214_092010.wav
-76,0.031185008,5.61330137,Linurgus olivaceus,BAM_20151214_092012.wav
-77,8.638247109,13.59666332,Linurgus olivaceus,BAM_20151214_092012.wav
-78,14.78169361,21.64239528,Linurgus olivaceus,BAM_20151214_092012.wav
-79,26.16422139,28.93968707,Linurgus olivaceus,BAM_20151214_092012.wav
-80,30.15590236,32.86899803,Linurgus olivaceus,BAM_20151214_092012.wav
-81,35.6444637,38.04570929,Linurgus olivaceus,BAM_20151214_092012.wav
-82,39.29310959,41.85028022,Linurgus olivaceus,BAM_20151214_092012.wav
-83,45.43655609,48.92927695,Linurgus olivaceus,BAM_20151214_092012.wav
-84,54.32428326,57.66107908,Linurgus olivaceus,BAM_20151214_092012.wav
-85,14.62209692,24.43185814,Linurgus olivaceus,BAM_20151214_092013.wav
-86,29.059104,37.35729824,Linurgus olivaceus,BAM_20151214_092013.wav
-87,40.96655001,44.29816703,Linurgus olivaceus,BAM_20151214_092013.wav
-88,47.8765705,49.04880611,Linurgus olivaceus,BAM_20151214_092013.wav
-91,56.33671838,59.38298857,Pogoniulus coryphaea,BAM_20151214_092018.wav
-92,1.030854,1.908177,Streptotelia decaocto,BOLIN_20230304_100000.wav
-93,0,2.061708,Streptotelia decaocto,BOLIN_20230304_103000.wav
-94,15.645588,17.414855,Streptotelia decaocto,BOLIN_20230304_103000.wav
-95,33.776924,36.474691,Streptotelia decaocto,BOLIN_20230304_103000.wav
-96,39.282123,45.269851,Streptotelia decaocto,BOLIN_20230304_103000.wav
-97,46.351882,53.290042,Streptotelia decaocto,BOLIN_20230304_103000.wav
-98,53.472818,54.394007,Streptotelia decaocto,BOLIN_20230304_103000.wav
-99,55.402928,57.340349,Streptotelia decaocto,BOLIN_20230304_103000.wav
-100,12.990333,17.846206,Streptotelia decaocto,BOLIN_20230304_110000.wav
-101,27.11532,28.403322,Streptotelia decaocto,BOLIN_20230304_110000.wav
-102,31.075714,32.181429,Streptotelia decaocto,BOLIN_20230304_110000.wav
-103,33.312277,34.705423,Streptotelia decaocto,BOLIN_20230304_110000.wav
-104,35.516124,37.925929,Streptotelia decaocto,BOLIN_20230304_110000.wav
-105,40.571153,53.896064,Streptotelia decaocto,BOLIN_20230304_110000.wav
-106,31.602527,33.851235,Streptotelia decaocto,BOLIN_20230530_060000.wav
-107,42.846065,44.086732,Streptotelia decaocto,BOLIN_20230530_060000.wav
-108,56.700172,57.906376,Streptotelia decaocto,BOLIN_20230530_060000.wav
-109,45.542791,47.955198,Streptotelia decaocto,BOLIN_20230530_061000.wav
-110,5.979322,6.978748,Streptotelia decaocto,BOLIN_20230530_063000.wav
-111,11.614015,13.819644,Streptotelia decaocto,BOLIN_20230530_063000.wav
-112,19.126939,19.971281,Streptotelia decaocto,BOLIN_20230530_063000.wav
-113,21.263642,22.64216,Streptotelia decaocto,BOLIN_20230530_063000.wav
-114,41.010913,50.453762,Streptotelia decaocto,BOLIN_20230530_063000.wav
-115,51.677197,54.141298,Streptotelia decaocto,BOLIN_20230530_063000.wav
-116,0.715106,2.007467,Streptotelia decaocto,BOLIN_20230530_065000.wav
-117,13.664561,19.997128,Streptotelia decaocto,BOLIN_20230530_073000.wav
-118,13.337163,13.914417,Streptotelia decaocto,BOLIN_20230530_075000.wav
-119,55.580126,56.743251,Streptotelia decaocto,BOLIN_20230530_080000.wav
-120,25.709362,27.398047,Streptotelia decaocto,BOLIN_20230530_082000.wav
-121,43.664561,45.215393,Streptotelia decaocto,BOLIN_20230530_082000.wav
-122,20.686387,23.219414,Streptotelia decaocto,BOLIN_20230530_083000.wav
-153,56.27555881,57.47235881,Hemiphaga novaeseelandiae,ROTOK_20170123_104701.wav
-154,3.123768151,4.305168151,Hemiphaga novaeseelandiae,ROTOK_20170124_072801.wav
-155,51.63726004,54.22266004,Hemiphaga novaeseelandiae,ROTOK_20170124_072801.wav
-156,3.715950031,5.270466765,Hemiphaga novaeseelandiae,ROTOK_20170124_104101.wav
-157,11.38090506,12.83660506,Hemiphaga novaeseelandiae,ROTOK_20170124_113501.wav
-158,28.57377527,32.01587527,Hemiphaga novaeseelandiae,ROTOK_20170406_105101.wav
-178,15.22126021,16.85355673,Atlapetes blancae,SPMCO_20210416_072400.wav
-179,22.43009875,23.41099955,Atlapetes blancae,SPMCO_20210416_072400.wav
-180,35.39391631,37.11282448,Atlapetes blancae,SPMCO_20210416_072400.wav
-181,44.4978679,46.21011364,Atlapetes blancae,SPMCO_20210416_072400.wav
-182,55.44363097,56.03576328,Atlapetes blancae,SPMCO_20210416_072400.wav
-183,2.978108353,3.604377224,Atlapetes blancae,SPMCO_20210419_082800.wav
-184,18.1785282,19.31114212,Atlapetes blancae,SPMCO_20210419_082800.wav
-185,22.42667421,23.57715818,Atlapetes blancae,SPMCO_20210419_082800.wav
-186,29.382453,30.89981385,Atlapetes blancae,SPMCO_20210419_082800.wav
-187,45.46987072,46.56292222,Atlapetes blancae,SPMCO_20210419_082800.wav
-188,54.44057362,55.94628388,Atlapetes blancae,SPMCO_20210419_082800.wav
-189,4.013817005,4.979582834,Atlapetes blancae,SPMCO_20210422_075600.wav
-190,11.90759066,13.59414757,Atlapetes blancae,SPMCO_20210422_075600.wav
-191,20.7624603,22.46786143,Atlapetes blancae,SPMCO_20210422_075600.wav
-192,29.91743673,31.59457154,Atlapetes blancae,SPMCO_20210422_075600.wav
-193,43.30589576,44.81857239,Atlapetes blancae,SPMCO_20210422_075600.wav
-194,12.07923319,13.7648292,Atlapetes blancae,SPMCO_20210517_054800.wav
-195,20.68081792,21.77885547,Atlapetes blancae,SPMCO_20210517_054800.wav
-196,6.9818,9.139462193,Atlapetes blancae,SPMCO_20210524_062000.wav
-197,25.1522,26.29227478,Atlapetes blancae,SPMCO_20210524_062000.wav
-198,1.212563133,6.036165924,Atlapetes blancae,SPMCO_20210526_062000.wav
-199,24.26417024,25.40344659,Atlapetes blancae,SPMCO_20210526_062000.wav
-200,34.2860891,35.41204058,Atlapetes blancae,SPMCO_20210526_062000.wav
-201,37.15093606,40.12238198,Atlapetes blancae,SPMCO_20210526_062000.wav
+,Recording site,Low Freq (Hz),High Freq (Hz),Country,Continent,Biome,start,end,wavfilename,species
+2845,BAM,1651.8,3144.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,51.69321878,55.52234609,BAM_20151116_060810.wav,Pogoniulus coryphaea
+2848,BAM,2607.0,8617.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,33.55487145,34.85183393,BAM_20151116_060810.wav,Crithagra burtoni
+2849,BAM,3701.5,8537.4,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,38.74272136,40.10144396,BAM_20151116_060810.wav,Crithagra burtoni
+2870,BAM,1382.7,4348.1,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,4.133672968,9.994851057,BAM_20151116_060812.wav,Bradypterus bangwaensis
+2873,BAM,1164.4,4366.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,19.78820275,24.41544861,BAM_20151116_060812.wav,Bradypterus bangwaensis
+2894,BAM,1808.4,7342.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,58.75813589,59.99179695,BAM_20151116_060813.wav,Bradypterus bangwaensis
+2913,BAM,3163.347,6972.5,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,20.25817734,25.7398018,BAM_20151116_060815.wav,Crithagra burtoni
+2914,BAM,3610.1,8299.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,34.1920001,34.99249773,BAM_20151116_060815.wav,Crithagra burtoni
+2939,BAM,1920.5,4196.6,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,6.866290075,10.12534054,BAM_20151116_070813.wav,Bradypterus bangwaensis
+2941,BAM,1689.3,3929.9,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,23.37045587,26.46237554,BAM_20151116_070813.wav,Bradypterus bangwaensis
+2944,BAM,1902.7,4267.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,54.43575357,57.73658673,BAM_20151116_070813.wav,Bradypterus bangwaensis
+2974,BAM,1969.4,3089.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,34.82549218,39.90954104,BAM_20151116_070817.wav,Pogoniulus coryphaea
+2990,BAM,2096.9,3164.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,3.107712912,6.702910202,BAM_20151116_070819.wav,Pogoniulus coryphaea
+2991,BAM,2470.0,8593.6,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,0.815012945,19.11091102,BAM_20151116_070819.wav,Crithagra burtoni
+2994,BAM,2380.0,8284.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,20.88565883,34.70279418,BAM_20151116_070819.wav,Crithagra burtoni
+3021,BAM,2777.3,6800.2,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,27.1044006,30.04169961,BAM_20151116_080813.wav,Linurgus olivaceus
+3094,BAM,1930.4,2925.4,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,26.41109855,30.00849703,BAM_20151116_090813.wav,Pogoniulus coryphaea
+3096,BAM,1413.0,2527.4,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,40.88419548,42.43997479,BAM_20151116_090813.wav,Pogoniulus coryphaea
+3097,BAM,1413.0,2706.5,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,46.89435112,50.72648122,BAM_20151116_090813.wav,Pogoniulus coryphaea
+3124,BAM,4730.7,7897.9,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,7.44209422,14.05042685,BAM_20151116_090816.wav,Linurgus olivaceus
+3125,BAM,5813.2,7757.6,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,18.33985198,21.05729718,BAM_20151116_090816.wav,Linurgus olivaceus
+3126,BAM,3487.9,8058.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,25.28786526,28.65379169,BAM_20151116_090816.wav,Linurgus olivaceus
+3128,BAM,3307.5,7998.1,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,25.32760662,32.09033954,BAM_20151116_090816.wav,Linurgus olivaceus
+3131,BAM,2151.7,3023.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,24.40109576,31.42058906,BAM_20151116_090817.wav,Pogoniulus coryphaea
+3159,BAM,3044.8,6447.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,18.80595594,20.13379847,BAM_20151123_061110.wav,Crithagra burtoni
+3218,BAM,2182.6,4253.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,8.654412525,11.21647613,BAM_20151123_061115.wav,Bradypterus bangwaensis
+3219,BAM,2182.6,4272.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,18.61964829,21.01785899,BAM_20151123_061115.wav,Bradypterus bangwaensis
+3220,BAM,2070.7,5092.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,26.37422645,28.8171243,BAM_20151123_061115.wav,Bradypterus bangwaensis
+3221,BAM,2238.6,4122.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,33.90739562,35.62040326,BAM_20151123_061115.wav,Bradypterus bangwaensis
+3222,BAM,1846.8,4421.2,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,43.26190692,45.85376196,BAM_20151123_061115.wav,Bradypterus bangwaensis
+3244,BAM,2129.4,3024.9,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,8.963472404,9.416559011,BAM_20151123_071111.wav,Pogoniulus coryphaea
+3256,BAM,1612.0,2885.6,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,45.93709169,48.91763732,BAM_20151123_071111.wav,Pogoniulus coryphaea
+3289,BAM,2109.5,3502.5,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,4.755529087,9.109617407,BAM_20151123_071114.wav,Bradypterus bangwaensis
+3290,BAM,1970.2,3403.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,14.57538785,19.60883747,BAM_20151123_071114.wav,Bradypterus bangwaensis
+3291,BAM,1850.8,3542.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,28.6258147,33.72102443,BAM_20151123_071114.wav,Bradypterus bangwaensis
+3292,BAM,1771.2,3462.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,46.50536886,51.35353813,BAM_20151123_071114.wav,Bradypterus bangwaensis
+3297,BAM,4219.0,9134.4,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,47.22755237,59.89214186,BAM_20151123_071114.wav,Crithagra burtoni
+3315,BAM,4000.9,7538.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,24.3231414,59.22437175,BAM_20151123_071119.wav,Crithagra burtoni
+3326,BAM,2069.7,3721.4,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,41.23277311,46.68618902,BAM_20151123_081114.wav,Pogoniulus coryphaea
+3359,BAM,1031.4,2436.2,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,2.59052729,6.044563676,BAM_20151123_081117.wav,Pogoniulus coryphaea
+3362,BAM,1155.8,2240.6,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,28.55837253,32.90377315,BAM_20151123_081117.wav,Pogoniulus coryphaea
+3363,BAM,1138.1,2205.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,42.48593861,49.39401138,BAM_20151123_081117.wav,Pogoniulus coryphaea
+3364,BAM,1084.7,2187.2,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,56.88704193,59.50542435,BAM_20151123_081117.wav,Pogoniulus coryphaea
+3387,BAM,1828.2,2984.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,31.59415699,34.60309216,BAM_20151123_091115.wav,Pogoniulus coryphaea
+3397,BAM,3482.6,6567.2,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,40.88519812,42.39832102,BAM_20151123_091116.wav,Crithagra burtoni
+3399,BAM,1315.9,4712.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,1.894148986,4.651807069,BAM_20151123_091117.wav,Bradypterus bangwaensis
+3400,BAM,1369.2,4570.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,12.98049158,15.79385993,BAM_20151123_091117.wav,Bradypterus bangwaensis
+3405,BAM,4285.5,6810.6,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,17.77157431,21.42059662,BAM_20151123_091117.wav,Crithagra burtoni
+3407,BAM,4161.0,7219.6,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,6.518100923,7.855147266,BAM_20151123_091117.wav,Linurgus olivaceus
+3408,BAM,4196.6,7148.5,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,27.63229109,29.38716442,BAM_20151123_091117.wav,Crithagra burtoni
+3409,BAM,3876.5,7077.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,37.63228353,39.10860554,BAM_20151123_091117.wav,Crithagra burtoni
+3410,BAM,3858.8,7290.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,53.3704332,54.9303206,BAM_20151123_091117.wav,Crithagra burtoni
+3411,BAM,1796.0,2667.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,57.63226842,59.99995465,BAM_20151123_091117.wav,Pogoniulus coryphaea
+3428,BAM,2216.667,3004.167,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,13.04243362,17.27884454,BAM_20151123_091119.wav,Pogoniulus coryphaea
+3468,BAM,1213.9,4199.1,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,0.741121416,3.751927169,BAM_20151130_061312.wav,Bradypterus bangwaensis
+3469,BAM,1174.1,3940.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,7.040653453,10.2058595,BAM_20151130_061312.wav,Bradypterus bangwaensis
+3470,BAM,1194.0,4238.9,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,13.41738564,17.01491251,BAM_20151130_061312.wav,Bradypterus bangwaensis
+3471,BAM,1532.4,4318.5,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,21.15284042,24.79668738,BAM_20151130_061312.wav,Bradypterus bangwaensis
+3472,BAM,1094.5,4039.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,29.07953383,33.34098197,BAM_20151130_061312.wav,Bradypterus bangwaensis
+3473,BAM,1233.8,4398.1,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,36.69146838,41.74035802,BAM_20151130_061312.wav,Bradypterus bangwaensis
+3474,BAM,1293.5,4099.5,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,45.98636614,50.32501443,BAM_20151130_061312.wav,Bradypterus bangwaensis
+3475,BAM,1154.2,4000.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,55.11258243,59.59019098,BAM_20151130_061312.wav,Bradypterus bangwaensis
+3513,BAM,3451.1,8040.2,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,45.64677198,47.27936585,BAM_20151130_061315.wav,Crithagra burtoni
+3528,BAM,1253.5,3949.1,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,8.465079939,11.76360015,BAM_20151130_061319.wav,Bradypterus bangwaensis
+3529,BAM,660.4,4056.9,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,18.81502857,23.59451705,BAM_20151130_061319.wav,Bradypterus bangwaensis
+3531,BAM,3625.6,10256.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,0.201950217,22.19769471,BAM_20151130_061319.wav,Crithagra burtoni
+3534,BAM,1091.7,5229.5,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,52.95095896,56.58606287,BAM_20151130_061319.wav,Bradypterus bangwaensis
+3537,BAM,2830.4,6941.2,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,24.0142619,25.39466545,BAM_20151130_061319.wav,Crithagra burtoni
+3559,BAM,3184.1,6527.4,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,19.51619729,20.79771974,BAM_20151130_071314.wav,Crithagra burtoni
+3560,BAM,3502.5,6408.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,26.86565134,27.97733346,BAM_20151130_071314.wav,Crithagra burtoni
+3561,BAM,1830.9,2925.4,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,9.866178852,17.01491251,BAM_20151130_071314.wav,Pogoniulus coryphaea
+3563,BAM,2014.7,2760.9,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,12.48261221,15.84904462,BAM_20151130_071315.wav,Pogoniulus coryphaea
+3576,BAM,2749.5,6442.5,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,22.61005828,24.70446368,BAM_20151130_071319.wav,Crithagra burtoni
+3577,BAM,2736.0,6429.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,37.17569582,41.19790619,BAM_20151130_071319.wav,Crithagra burtoni
+3578,BAM,2506.9,6321.2,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,42.81631036,53.90713894,BAM_20151130_071319.wav,Crithagra burtoni
+3579,BAM,3019.1,5930.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,18.58784791,20.58705306,BAM_20151130_071319.wav,Crithagra burtoni
+3580,BAM,3167.3,6348.1,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,30.48787858,34.20068815,BAM_20151130_071319.wav,Crithagra burtoni
+3581,BAM,3140.4,6092.1,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,25.41846552,27.72707147,BAM_20151130_071319.wav,Crithagra burtoni
+3582,BAM,2951.7,6280.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,8.306221409,11.80483043,BAM_20151130_071319.wav,Crithagra burtoni
+3583,BAM,3383.0,5606.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,3.998410306,5.902415213,BAM_20151130_071319.wav,Crithagra burtoni
+3584,BAM,3288.6,5526.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,14.4704373,16.46964245,BAM_20151130_071319.wav,Crithagra burtoni
+3619,BAM,1850.8,3741.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,29.73994982,31.22476376,BAM_20151130_081316.wav,Bradypterus bangwaensis
+3620,BAM,2010.0,4039.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,47.14830151,49.48469992,BAM_20151130_081316.wav,Bradypterus bangwaensis
+3630,BAM,1225.0,2592.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,4.250347862,6.303236965,BAM_20151130_081317.wav,Pogoniulus coryphaea
+3631,BAM,1331.5,2680.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,44.85514504,45.79966679,BAM_20151130_081317.wav,Pogoniulus coryphaea
+3673,BAM,2422.74,3082.093,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,48.09250864,49.94340698,BAM_20151130_091318.wav,Pogoniulus coryphaea
+3687,BAM,2070.7,2984.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,18.75370974,19.81875363,BAM_20151207_061710.wav,Pogoniulus coryphaea
+3757,BAM,5583.8,8680.1,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,1.758658739,33.57439411,BAM_20151207_061719.wav,Crithagra burtoni
+3758,BAM,4482.5,9327.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,38.71333199,40.24359349,BAM_20151207_061719.wav,Crithagra burtoni
+3775,BAM,3583.1,10139.1,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,7.189723524,8.116969614,BAM_20151207_071712.wav,Crithagra burtoni
+3776,BAM,3110.6,10493.4,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,13.13836382,14.22252848,BAM_20151207_071712.wav,Crithagra burtoni
+3777,BAM,2775.9,10532.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,24.97858312,26.36231959,BAM_20151207_071712.wav,Crithagra burtoni
+3781,BAM,3583.1,8505.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,37.54211237,38.48362378,BAM_20151207_071712.wav,Crithagra burtoni
+3782,BAM,3957.2,8052.2,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,45.80173523,46.81457326,BAM_20151207_071712.wav,Crithagra burtoni
+3785,BAM,3090.9,7619.1,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,50.84971936,51.90535337,BAM_20151207_071712.wav,Crithagra burtoni
+3786,BAM,3720.9,7993.1,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,56.15642005,57.06940082,BAM_20151207_071712.wav,Crithagra burtoni
+3791,BAM,1437.3,4384.5,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,17.98456224,20.39073009,BAM_20151207_071713.wav,Bradypterus bangwaensis
+3792,BAM,1528.2,4457.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,34.67349564,37.6657813,BAM_20151207_071713.wav,Bradypterus bangwaensis
+3793,BAM,2638.0,3766.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,20.29818517,27.4549921,BAM_20151207_071713.wav,Pogoniulus coryphaea
+3863,BAM,3283.6,7920.5,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,0.0,1.744723334,BAM_20151207_081721.wav,Crithagra burtoni
+3864,BAM,2388.1,8955.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,3.983527612,8.492016227,BAM_20151207_081721.wav,Crithagra burtoni
+3865,BAM,2368.2,9233.9,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,11.51826201,15.23930912,BAM_20151207_081721.wav,Crithagra burtoni
+3866,BAM,1990.1,3781.1,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,17.58175706,20.68520299,BAM_20151207_081721.wav,Bradypterus bangwaensis
+3867,BAM,2845.8,6965.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,18.41551865,20.22200211,BAM_20151207_081721.wav,Crithagra burtoni
+3868,BAM,2527.4,7164.3,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,21.36456429,41.2050022,BAM_20151207_081721.wav,Crithagra burtoni
+3869,BAM,2408.0,7283.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,42.05420381,58.68311558,BAM_20151207_081721.wav,Crithagra burtoni
+3876,BAM,2510.6,8332.4,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,0.0,19.35731185,BAM_20151207_091711.wav,Crithagra burtoni
+3877,BAM,2365.1,8514.4,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,21.82517631,26.99226752,BAM_20151207_091711.wav,Crithagra burtoni
+3878,BAM,2474.3,8496.2,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,30.53001153,36.2986447,BAM_20151207_091711.wav,Crithagra burtoni
+3900,BAM,1846.8,2928.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,48.7536871,52.61167822,BAM_20151207_091715.wav,Pogoniulus coryphaea
+3914,BAM,2049.8,4796.1,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,6.639212686,8.492016227,BAM_20151207_091718.wav,Bradypterus bangwaensis
+3919,BAM,6010.0,8418.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,49.00665364,51.10649766,BAM_20151207_091718.wav,Linurgus olivaceus
+3923,BAM,3004.4,6492.2,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,16.6844183,17.79214491,BAM_20151207_091719.wav,Crithagra burtoni
+3924,BAM,2899.9,6152.6,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,27.19069129,28.4468761,BAM_20151207_091719.wav,Crithagra burtoni
+3947,BAM,1512.5,5253.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,9.294897761,12.90786466,BAM_20151214_062006.wav,Bradypterus bangwaensis
+3948,BAM,5094.6,5910.5,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,22.38804278,24.36436656,BAM_20151214_062006.wav,Linurgus olivaceus
+3951,BAM,3044.8,7781.2,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,3.860007376,5.10622481,BAM_20151214_062006.wav,Crithagra burtoni
+3953,BAM,2786.1,8179.2,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,13.12402508,14.79154826,BAM_20151214_062006.wav,Crithagra burtoni
+4062,BAM,2256.9,7569.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,28.87855879,29.59913026,BAM_20151214_072003.wav,Crithagra burtoni
+4063,BAM,5352.7,10126.2,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,32.12359937,33.23720982,BAM_20151214_072003.wav,Crithagra burtoni
+4064,BAM,3055.8,8408.6,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,43.10685543,47.11366952,BAM_20151214_072003.wav,Crithagra burtoni
+4065,BAM,3914.7,8288.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,51.6008646,52.46336682,BAM_20151214_072003.wav,Crithagra burtoni
+4104,BAM,2225.6,3254.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,52.16844539,56.37299815,BAM_20151214_082012.wav,Pogoniulus coryphaea
+4115,BAM,4796.1,7821.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,30.29333789,33.04166314,BAM_20151214_082013.wav,Linurgus olivaceus
+4126,BAM,2862.9,7628.6,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,50.11137547,51.28332037,BAM_20151214_082015.wav,Crithagra burtoni
+4127,BAM,2471.7,7664.2,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,52.51435492,54.15901708,BAM_20151214_082015.wav,Crithagra burtoni
+4128,BAM,2898.5,8926.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,58.43316905,59.59526566,BAM_20151214_082015.wav,Crithagra burtoni
+4129,BAM,3165.2,10011.4,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,15.62921467,17.31326994,BAM_20151214_082015.wav,Crithagra burtoni
+4146,BAM,2508.6,9031.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,25.68912272,34.9099416,BAM_20151214_092010.wav,Linurgus olivaceus
+4147,BAM,3499.2,8580.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,38.86864599,42.35876902,BAM_20151214_092010.wav,Linurgus olivaceus
+4148,BAM,3833.7,8748.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,47.74760137,54.67937351,BAM_20151214_092010.wav,Linurgus olivaceus
+4151,BAM,4155.3,7718.8,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,59.23035293,59.99995465,BAM_20151214_092010.wav,Linurgus olivaceus
+4152,BAM,4736.3,9209.4,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,0.031185008,5.61330137,BAM_20151214_092012.wav,Linurgus olivaceus
+4153,BAM,3999.5,8920.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,8.638247109,13.59666332,BAM_20151214_092012.wav,Linurgus olivaceus
+4154,BAM,4210.0,8920.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,14.78169361,22.98335061,BAM_20151214_092012.wav,Linurgus olivaceus
+4155,BAM,3841.6,8998.9,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,26.16422139,32.86899803,BAM_20151214_092012.wav,Linurgus olivaceus
+4156,BAM,3736.4,8630.5,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,35.6444637,41.85028022,BAM_20151214_092012.wav,Linurgus olivaceus
+4157,BAM,3999.5,8709.5,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,45.43655609,51.08104247,BAM_20151214_092012.wav,Linurgus olivaceus
+4158,BAM,4736.3,8051.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,54.32428326,57.66107908,BAM_20151214_092012.wav,Linurgus olivaceus
+4173,BAM,5658.0,9205.7,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,13.4498613,49.04880611,BAM_20151214_092013.wav,Linurgus olivaceus
+4174,BAM,3693.2,6313.0,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,49.94340698,51.73260871,BAM_20151214_092013.wav,Crithagra burtoni
+4175,BAM,5803.6,7404.6,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,46.33415521,59.07450548,BAM_20151214_092013.wav,Linurgus olivaceus
+4187,BAM,2037.6,3238.4,Cameroon,Africa,Tropical and Subtropical Moist Broadleaf Forest,54.50124418,59.38298857,BAM_20151214_092018.wav,Pogoniulus coryphaea
+32570,DYOM,3352.2,5971.1,Cyprus,Europe,Mediterranean Forests. Woodlands and shrublands,43.99579363,45.78850389,DYOM_20230507_062602.wav,Oenanthe cypriaca
+32620,DYOM,3976.0,6885.2,Cyprus,Europe,Mediterranean Forests. Woodlands and shrublands,38.02574256,44.84535597,DYOM_20230507_070102.wav,Oenanthe cypriaca
+32625,DYOM,4118.0,7206.4,Cyprus,Europe,Mediterranean Forests. Woodlands and shrublands,0.0,1.960835727,DYOM_20230507_070302.wav,Oenanthe cypriaca
+32652,DYOM,3927.5,6060.9,Cyprus,Europe,Mediterranean Forests. Woodlands and shrublands,21.67465471,24.48173125,DYOM_20230507_070602.wav,Oenanthe cypriaca
+32653,DYOM,3733.5,5867.0,Cyprus,Europe,Mediterranean Forests. Woodlands and shrublands,32.84355832,35.56825375,DYOM_20230507_070602.wav,Oenanthe cypriaca
+32684,DYOM,3966.4,6789.9,Cyprus,Europe,Mediterranean Forests. Woodlands and shrublands,49.66462607,53.55479815,DYOM_20230507_071302.wav,Oenanthe cypriaca
+32808,DYOM,4454.1,6540.2,Cyprus,Europe,Mediterranean Forests. Woodlands and shrublands,3.430106295,6.837939172,DYOM_20230508_060702.wav,Oenanthe cypriaca
+32862,DYOM,4206.8,6549.2,Cyprus,Europe,Mediterranean Forests. Woodlands and shrublands,40.99899749,42.49131646,DYOM_20230508_061002.wav,Oenanthe cypriaca
+32871,DYOM,4273.2,5982.4,Cyprus,Europe,Mediterranean Forests. Woodlands and shrublands,15.73026056,18.55898458,DYOM_20230508_061102.wav,Oenanthe cypriaca
+32875,DYOM,4395.3,6531.8,Cyprus,Europe,Mediterranean Forests. Woodlands and shrublands,25.52351765,28.11837079,DYOM_20230508_061102.wav,Oenanthe cypriaca
+32899,DYOM,4229.9,6069.0,Cyprus,Europe,Mediterranean Forests. Woodlands and shrublands,49.04437486,51.10758354,DYOM_20230508_062202.wav,Oenanthe cypriaca
+33005,DYOM,4282.5,6691.4,Cyprus,Europe,Mediterranean Forests. Woodlands and shrublands,12.43311206,15.21728925,DYOM_20230509_060302.wav,Oenanthe cypriaca
+33009,DYOM,3568.8,7405.2,Cyprus,Europe,Mediterranean Forests. Woodlands and shrublands,36.70681812,38.38846114,DYOM_20230509_060302.wav,Oenanthe cypriaca
+33027,DYOM,5069.0,7137.9,Cyprus,Europe,Mediterranean Forests. Woodlands and shrublands,31.72462088,34.19697022,DYOM_20230509_061502.wav,Oenanthe cypriaca
+33114,DYOM,3952.9,6776.5,Cyprus,Europe,Mediterranean Forests. Woodlands and shrublands,1.7818734,3.74193414,DYOM_20230511_061602.wav,Oenanthe cypriaca
+74965,ROTOK,6287.7,8182.6,New Zealand,Oceania,Temperate Broadleaf and Mixed Forest˙,56.27555881,57.47235881,ROTOK_20170123_104701.wav,Hemiphaga novaeseelandiae
+74975,ROTOK,3150.0,5524.6,New Zealand,Oceania,Temperate Broadleaf and Mixed Forest˙,3.123768151,4.305168151,ROTOK_20170124_072801.wav,Hemiphaga novaeseelandiae
+74984,ROTOK,2605.1,5832.3,New Zealand,Oceania,Temperate Broadleaf and Mixed Forest˙,51.63726004,54.22266004,ROTOK_20170124_072801.wav,Hemiphaga novaeseelandiae
+74986,ROTOK,582.5,959.5,New Zealand,Oceania,Temperate Broadleaf and Mixed Forest˙,0.7598618,0.8532618,ROTOK_20170124_080501.wav,Hemiphaga novaeseelandiae
+75009,ROTOK,457.5,950.3,New Zealand,Oceania,Temperate Broadleaf and Mixed Forest˙,3.455866765,5.270466765,ROTOK_20170124_104101.wav,Hemiphaga novaeseelandiae
+75022,ROTOK,324.5,1148.4,New Zealand,Oceania,Temperate Broadleaf and Mixed Forest˙,11.38090506,12.83660506,ROTOK_20170124_113501.wav,Hemiphaga novaeseelandiae
+75062,ROTOK,222.1,809.9,New Zealand,Oceania,Temperate Broadleaf and Mixed Forest˙,51.49819406,51.81089406,ROTOK_20170125_081301.wav,Hemiphaga novaeseelandiae
+75069,ROTOK,2015.1,3332.7,New Zealand,Oceania,Temperate Broadleaf and Mixed Forest˙,55.25358015,56.06878015,ROTOK_20170125_083401.wav,Hemiphaga novaeseelandiae
+75137,ROTOK,3015.4,3897.9,New Zealand,Oceania,Temperate Broadleaf and Mixed Forest˙,46.99218258,47.38618258,ROTOK_20170130_072101.wav,Hemiphaga novaeseelandiae
+75279,ROTOK,76.6,13589.8,New Zealand,Oceania,Temperate Broadleaf and Mixed Forest˙,7.811801798,7.875101798,ROTOK_20170301_092001.wav,Hemiphaga novaeseelandiae
+75331,ROTOK,6300.0,7377.6,New Zealand,Oceania,Temperate Broadleaf and Mixed Forest˙,5.949845306,6.106445306,ROTOK_20170301_115801.wav,Hemiphaga novaeseelandiae
+75707,ROTOK,548.3,1028.0,New Zealand,Oceania,Temperate Broadleaf and Mixed Forest˙,28.57377527,32.01587527,ROTOK_20170406_105101.wav,Hemiphaga novaeseelandiae
+84850,SPMCO,2484.0,5954.3,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,15.22126021,16.85355673,SPMCO_20210416_072400.wav,Atlapetes blancae
+84854,SPMCO,2374.4,6429.2,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,22.43009875,23.82921006,SPMCO_20210416_072400.wav,Atlapetes blancae
+84860,SPMCO,2155.3,4310.5,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,28.65438667,30.18008424,SPMCO_20210416_072400.wav,Atlapetes blancae
+84866,SPMCO,2557.1,6356.2,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,35.39391631,37.11282448,SPMCO_20210416_072400.wav,Atlapetes blancae
+84869,SPMCO,2520.5,5589.0,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,44.4978679,46.21011364,SPMCO_20210416_072400.wav,Atlapetes blancae
+84872,SPMCO,2666.7,4602.7,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,54.62332711,56.03576328,SPMCO_20210416_072400.wav,Atlapetes blancae
+85279,SPMCO,2342.7,4834.9,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,2.5850247,3.604377224,SPMCO_20210419_082800.wav,Atlapetes blancae
+85281,SPMCO,2243.0,6479.8,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,18.1785282,19.31114212,SPMCO_20210419_082800.wav,Atlapetes blancae
+85282,SPMCO,7028.0,9669.8,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,22.42667421,23.91239717,SPMCO_20210419_082800.wav,Atlapetes blancae
+85283,SPMCO,2492.2,5931.5,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,29.382453,30.89981385,SPMCO_20210419_082800.wav,Atlapetes blancae
+85284,SPMCO,2492.2,6230.5,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,45.00391247,46.56292222,SPMCO_20210419_082800.wav,Atlapetes blancae
+85285,SPMCO,2243.0,6529.6,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,54.44057362,55.94628388,SPMCO_20210419_082800.wav,Atlapetes blancae
+85533,SPMCO,2265.5,6324.5,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,3.542711723,4.979582834,SPMCO_20210422_075600.wav,Atlapetes blancae
+85534,SPMCO,2076.7,6371.7,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,11.90759066,13.59414757,SPMCO_20210422_075600.wav,Atlapetes blancae
+85536,SPMCO,2595.9,7032.4,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,20.7624603,22.46786143,SPMCO_20210422_075600.wav,Atlapetes blancae
+85537,SPMCO,2029.5,6513.3,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,29.91743673,31.59457154,SPMCO_20210422_075600.wav,Atlapetes blancae
+85538,SPMCO,2076.7,6938.1,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,42.82536837,44.81857239,SPMCO_20210422_075600.wav,Atlapetes blancae
+85539,SPMCO,2312.7,6418.9,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,54.08658662,55.51403562,SPMCO_20210422_075600.wav,Atlapetes blancae
+86298,SPMCO,2455.6,5678.7,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,0.1266,1.059340871,SPMCO_20210515_054800.wav,Atlapetes blancae
+86299,SPMCO,1688.2,4527.6,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,9.7572,11.20294835,SPMCO_20210515_054800.wav,Atlapetes blancae
+86300,SPMCO,2187.1,5717.0,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,24.8586,26.17109965,SPMCO_20210515_054800.wav,Atlapetes blancae
+86301,SPMCO,3107.9,6753.0,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,35.5248,37.67676644,SPMCO_20210515_054800.wav,Atlapetes blancae
+86302,SPMCO,1952.2,6736.8,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,53.5689,54.73482609,SPMCO_20210515_054800.wav,Atlapetes blancae
+86418,SPMCO,2760.1,6641.5,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,4.9369,6.462597568,SPMCO_20210516_054800.wav,Atlapetes blancae
+86419,SPMCO,3078.6,8775.51,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,13.6358,16.03311143,SPMCO_20210516_054800.wav,Atlapetes blancae
+86421,SPMCO,2384.8,6070.5,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,14.5352,15.79440018,SPMCO_20210516_054800.wav,Atlapetes blancae
+86423,SPMCO,2731.7,6807.6,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,45.0845,46.63018487,SPMCO_20210516_054800.wav,Atlapetes blancae
+86424,SPMCO,3035.2,8715.4,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,46.7501,48.38239653,SPMCO_20210516_054800.wav,Atlapetes blancae
+86430,SPMCO,5290.0,8238.5,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,30.8689,31.12873496,SPMCO_20210516_054800.wav,Atlapetes blancae
+86453,SPMCO,3139.5,7073.3,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,4.830265226,6.602472882,SPMCO_20210517_054800.wav,Atlapetes blancae
+86454,SPMCO,3063.8,8624.1,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,12.07923319,13.7648292,SPMCO_20210517_054800.wav,Atlapetes blancae
+86455,SPMCO,2950.4,5635.9,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,20.68081792,21.99998001,SPMCO_20210517_054800.wav,Atlapetes blancae
+86456,SPMCO,3177.3,7111.1,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,27.34772718,28.59360249,SPMCO_20210517_054800.wav,Atlapetes blancae
+86457,SPMCO,3026.0,5976.4,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,35.01482288,36.36729714,SPMCO_20210517_054800.wav,Atlapetes blancae
+86458,SPMCO,6354.6,10855.8,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,33.99547035,34.2153307,SPMCO_20210517_054800.wav,Atlapetes blancae
+86459,SPMCO,3290.8,7678.5,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,44.55585506,45.38865941,SPMCO_20210517_054800.wav,Atlapetes blancae
+86460,SPMCO,7527.2,11158.4,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,51.98362491,52.18349796,SPMCO_20210517_054800.wav,Atlapetes blancae
+86461,SPMCO,3215.1,6014.2,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,54.0289924,55.78121275,SPMCO_20210517_054800.wav,Atlapetes blancae
+86462,SPMCO,7300.2,11044.9,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,54.42207605,54.62861153,SPMCO_20210517_054800.wav,Atlapetes blancae
+86468,SPMCO,7905.4,11271.9,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,9.917579912,10.07747835,SPMCO_20210517_054800.wav,Atlapetes blancae
+86469,SPMCO,7716.3,11498.8,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,17.72392007,17.89048094,SPMCO_20210517_054800.wav,Atlapetes blancae
+86470,SPMCO,7489.4,10969.3,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,20.54879243,20.7553279,SPMCO_20210517_054800.wav,Atlapetes blancae
+86471,SPMCO,6959.8,11461.0,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,37.08807456,37.32125978,SPMCO_20210517_054800.wav,Atlapetes blancae
+86472,SPMCO,7300.2,10515.4,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,57.00625085,57.30606041,SPMCO_20210517_054800.wav,Atlapetes blancae
+86701,SPMCO,2809.2,10300.3,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,12.64427596,14.54973231,SPMCO_20210518_060400.wav,Atlapetes blancae
+86702,SPMCO,3370.6,10111.7,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,55.39874103,56.84448938,SPMCO_20210518_060400.wav,Atlapetes blancae
+86705,SPMCO,2720.8,5319.8,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,16.84592847,17.47885978,SPMCO_20210518_060400.wav,Atlapetes blancae
+86713,SPMCO,3208.1,6456.9,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,17.86394397,19.07650711,SPMCO_20210518_060400.wav,Atlapetes blancae
+86777,SPMCO,2117.6,10392.2,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,6.9818,9.139462193,SPMCO_20210524_062000.wav,Atlapetes blancae
+86780,SPMCO,2627.5,8509.8,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,25.1522,26.29227478,SPMCO_20210524_062000.wav,Atlapetes blancae
+86784,SPMCO,3058.8,5764.7,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,47.1663,47.75989266,SPMCO_20210524_062000.wav,Atlapetes blancae
+86814,SPMCO,1861.0,10706.9,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,1.212563133,6.036165924,SPMCO_20210526_062000.wav,Atlapetes blancae
+86815,SPMCO,3480.4,10247.7,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,24.26417024,25.93644137,SPMCO_20210526_062000.wav,Atlapetes blancae
+86817,SPMCO,7105.7,10102.7,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,29.17692644,29.3035127,SPMCO_20210526_062000.wav,Atlapetes blancae
+86818,SPMCO,5800.6,8555.9,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,30.93580923,31.09570766,SPMCO_20210526_062000.wav,Atlapetes blancae
+86819,SPMCO,6912.4,9861.0,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,32.89456506,33.10110054,SPMCO_20210526_062000.wav,Atlapetes blancae
+86820,SPMCO,7009.1,10344.4,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,35.32635376,35.53288924,SPMCO_20210526_062000.wav,Atlapetes blancae
+86822,SPMCO,2416.9,9812.7,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,34.2860891,40.12238198,SPMCO_20210526_062000.wav,Atlapetes blancae
+86823,SPMCO,5994.0,9184.3,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,38.27514043,38.44836374,SPMCO_20210526_062000.wav,Atlapetes blancae
+86824,SPMCO,6574.0,10102.7,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,41.21696631,41.40351448,SPMCO_20210526_062000.wav,Atlapetes blancae
+86825,SPMCO,6767.4,9619.3,Colombia,South America,Tropical and Subtropical Grasslands & Savannas and Shrublands,44.80552916,44.99207734,SPMCO_20210526_062000.wav,Atlapetes blancae

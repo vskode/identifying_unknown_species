@@ -9,3 +9,5 @@ bacpipe/model_checkpoints
 data/context
 data/target_species
 *.h5
+data/paris
+data/archive

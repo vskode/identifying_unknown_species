@@ -14,6 +14,9 @@ SRCS = {
 RATIO_WITHIN_FILE = 2
 RATIO_DIFF_FILE = 2
 
+# number of context files to copy to the get the contextual segments from
+NR_CNTXT_FILES = 50
+
 np.random.seed(SEED)
 
 
@@ -29,13 +32,12 @@ def copy_target_and_context_files():
         else:
             path_with_parent = [Path(SRCS[dataset]) / f'{d.stem.split("_")[0]}/{d.stem}{d.suffix}' for d in paths]
 
-        get_files_with_targe_vocalizations(dataset, path_with_parent)
+        get_files_with_target_vocalizations(dataset, path_with_parent)
         
-        nr_cntxt_files = 50
-        get_context_files(path_with_parent, nr_cntxt_files, dataset)
+        get_context_files(path_with_parent, NR_CNTXT_FILES, dataset)
 
 
-def get_files_with_targe_vocalizations(dataset, path_with_parent):
+def get_files_with_target_vocalizations(dataset, path_with_parent):
     ## GET TARGET SPECIES VOCALIZATIONS
     dest_src = Path(f'data/target_species/{dataset}_dataset')
     dest_src.mkdir(exist_ok=True, parents=True)
@@ -49,7 +51,10 @@ def get_files_with_targe_vocalizations(dataset, path_with_parent):
         
 def get_context_files(path_with_parent, nr_cntxt_files, dataset):
     ## GET CONTEXT BY RANDOM SAMPLING
-    unique_parent_dirs = np.unique([d.parent for d in path_with_parent])
+    if dataset == 'wabad':
+        unique_parent_dirs = np.unique([d.parent.parent for d in path_with_parent])
+    else:
+        unique_parent_dirs = np.unique([d.parent for d in path_with_parent])
     
     for parent_fold in unique_parent_dirs:
         
@@ -418,5 +423,5 @@ def read_dataset():
         
     print('loaded')
     
-# copy_target_and_context_files()
+copy_target_and_context_files()
 create_dataset()
