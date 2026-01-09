@@ -4,7 +4,7 @@ from pathlib import Path
 import shutil
 
 SEED = 42 # ensure that always the same context files get selected
-GLOBAL_LENGTH = 5 # 5s is the standard for bird volcalizations
+GLOBAL_LENGTH = 3 # 5s is the standard for bird volcalizations
 SRCS = {
     'anura': '/mnt/swap/Work/Data/Amphibians/AnuranSet/AnuranSet',
     'wabad': '/media/siriussound/Extreme SSD/Recordings/terrestrial/Birds/WABAD',
@@ -12,7 +12,7 @@ SRCS = {
     }
 
 RATIO_WITHIN_FILE = 2
-RATIO_DIFF_FILE = 2
+RATIO_DIFF_FILE = 1
 
 # number of context files to copy to the get the contextual segments from
 NR_CNTXT_FILES = 50
@@ -164,10 +164,12 @@ def remove_segments_that_are_already_context(starts, data, combined):
     remove = []
     for i in range(len(combined)):
         if starts[i] in prev_starts:
-            remove.append((starts[i], combined[i]))
-    for start, combine in remove:
+            remove.append(starts[i])
+    for start in remove:
+        idx = np.where(starts==start)[0][0]
         starts.remove(start)
-        combined.remove(combine)
+        combined = np.vstack([combined[:idx], combined[idx+1:]])
+    return combined
     
 
 def get_random_within_file_windows(context, starts, data):
@@ -176,9 +178,7 @@ def get_random_within_file_windows(context, starts, data):
     else:
         return []
     
-    combined = combined.tolist()
-    remove_segments_that_are_already_context(starts, data, combined)
-    combined = np.array(combined)
+    combined = remove_segments_that_are_already_context(starts, data, combined)
 
             
     if len(combined) >= RATIO_WITHIN_FILE:
@@ -194,7 +194,7 @@ def get_random_within_file_windows(context, starts, data):
         data['start'].append(starts[idx])
         data['end'].append(starts[idx] + GLOBAL_LENGTH)
     
-    return combined[idxs].tolist()
+    return combined[idxs]
 
 def get_other_target_segments_from_same_file(df, current_idx):
     starts, ends = [], []
@@ -208,7 +208,9 @@ def get_other_target_segments_from_same_file(df, current_idx):
         
 
 def get_target_audio(dataset, data, df, src_dir):
-    for idx, event in tqdm(df.iterrows(), total=len(df)):
+    for idx, event in tqdm(df.iterrows(), 
+                           total=len(df), 
+                           desc=f'get {dataset} target audio'):
         # get other events in same file with different timestamps
         other_target_segments = []
         if len(df[df['wavfilename']==event.wavfilename]) > 1:
@@ -225,7 +227,10 @@ def get_target_audio(dataset, data, df, src_dir):
         
         during, context, starts = audio_tup
 
-        data['audio'].extend(during.tolist())
+        if len(data['audio']) == 0:
+            data['audio'] = during
+        else:
+            data['audio'] = np.vstack([data['audio'], during])
         
         data['sample_rate'].extend([sr] * len(during))
         data['dataset'].extend([dataset] * len(during))
@@ -236,7 +241,8 @@ def get_target_audio(dataset, data, df, src_dir):
         data['label'].extend([event.species] * len(during))
         
         windows = get_random_within_file_windows(context, starts, data)
-        data['audio'].extend(windows)
+        if len(windows) > 0:
+            data['audio'] = np.vstack([data['audio'], windows])
         
         data['label'].extend(['within_file'] * len(windows))
         data['dataset'].extend([dataset] * len(windows))
@@ -253,7 +259,7 @@ def get_context_file_audio(dataset):
     files.sort()
     
     all_context = dict()
-    all_context['audio'] = []
+    all_context['audio'] = np.array([])
     all_context['filename'] = []
     all_context['sample_rate'] = []
     
@@ -268,7 +274,11 @@ def get_context_file_audio(dataset):
             ).reshape(nr_windows, -1)
         audio = audio[:-1] # discard the last window, because it was probably padded
         
-        all_context['audio'].extend(audio)
+        if len(all_context['audio']) == 0:
+            all_context['audio'] = audio
+        else:
+            all_context['audio'] = np.vstack([all_context['audio'], audio])
+            
         all_context['filename'].extend([file.stem + file.suffix] * len(audio))
         all_context['sample_rate'].extend([sr] * len(audio))
     return all_context
@@ -321,7 +331,7 @@ def get_random_diff_file_windows(all_context, data, dataset):
                             size = nr_diff_file_wins, replace=False)
     idxs = np.sort(idxs)
     
-    selected_windows = np.array(all_context['audio'])[idxs].tolist()
+    selected_windows = np.array(all_context['audio'])[idxs]
     
     # These don't change for any of the segments
     data['label'].extend(['diff_file'] * nr_diff_file_wins)
@@ -332,7 +342,7 @@ def get_random_diff_file_windows(all_context, data, dataset):
     
     
     # add the audio segments
-    data['audio'].extend(selected_windows)        
+    data['audio'] = np.vstack([data['audio'], selected_windows])        
     
     # get filenames and sample rates based on the random indices
     data['filename'].extend(np.array(all_context['filename'])[idxs].tolist())
@@ -347,10 +357,10 @@ def get_random_diff_file_windows(all_context, data, dataset):
 
 def write_dataset_to_file(file, data, chunk_size=500):
     # --- Audio ---
-    audio_data = np.array(data['audio'])
-    n_samples = len(audio_data)
-    shape = audio_data.shape
-    dtype = audio_data.dtype
+    # audio_data = np.array(data['audio'])
+    n_samples = len(data['audio'])
+    shape = data['audio'].shape
+    dtype = data['audio'].dtype
 
     dset = file.create_dataset(
         "audio",
@@ -360,7 +370,7 @@ def write_dataset_to_file(file, data, chunk_size=500):
     )
 
     for i in range(0, n_samples, chunk_size):
-        dset[i:i+chunk_size] = audio_data[i:i+chunk_size]
+        dset[i:i+chunk_size] = data['audio'][i:i+chunk_size]
 
     # --- Metadata ---
     dt = h5py.string_dtype(encoding="utf-8")
@@ -383,7 +393,7 @@ def collect_audio_segments():
     data = {
         'dataset': [],
         'label': [],
-        'audio': [],
+        'audio': np.array([]),
         'filename': [],
         'sample_rate': [],
         'start': [],
