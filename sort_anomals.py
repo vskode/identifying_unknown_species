@@ -3,6 +3,8 @@ import pandas as pd
 from pathlib import Path
 import shutil
 
+from scipy.signal.windows import tukey
+
 SEED = 42 # ensure that always the same context files get selected
 GLOBAL_LENGTH = 3 # 5s is the standard for bird volcalizations
 src_path = '/media/siriussound/Extreme SSD/Recordings'
@@ -14,7 +16,8 @@ SRCS = {
 
 RATIO_WITHIN_FILE = 2
 RATIO_DIFF_FILE = 1
-PAD_FUNC = 'wrap'
+PAD_FUNC = 'constant'
+USE_TUKEY_FILTER = True
 
 # number of context files to copy to the get the contextual segments from
 NR_CNTXT_FILES = 50
@@ -93,6 +96,9 @@ import librosa as lb
 def get_audio(file, target_start, target_end, src_dir, other_target_segments):
     path = list(src_dir.rglob(file))[0]
     raw_audio, sr = lb.load(path)
+    if USE_TUKEY_FILTER:
+        tukey_filter = tukey(len(audio), alpha=0.01)
+        audio = tukey_filter * audio
     
     # get all the start and end positions of target segments
     segment_indices = [(target_start, target_end), *other_target_segments]
@@ -305,6 +311,9 @@ def get_context_file_audio(dataset):
     for file in tqdm(files, total=len(files)):
         
         audio, sr = lb.load(file)
+        if USE_TUKEY_FILTER:
+            tukey_filter = tukey(len(audio), alpha=0.01)
+            audio = tukey_filter * audio
         nr_windows = int(np.ceil(len(audio) / sr / GLOBAL_LENGTH))
         audio = lb.util.fix_length(
                 audio,
