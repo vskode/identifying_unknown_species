@@ -13,6 +13,7 @@ SRCS = {
 
 RATIO_WITHIN_FILE = 2
 RATIO_DIFF_FILE = 1
+PAD_FUNC = 'wrap'
 
 # number of context files to copy to the get the contextual segments from
 NR_CNTXT_FILES = 50
@@ -150,7 +151,7 @@ def get_audio(file, target_start, target_end, src_dir, other_target_segments):
         audio_padded_dict[key] = lb.util.fix_length(
                 audio,
                 size=nr_windows * GLOBAL_LENGTH * sr,
-                mode='minimum',
+                mode=PAD_FUNC,
             ).reshape(nr_windows, -1)
         if False:#Sanity check
             import matplotlib.pyplot as plt
@@ -307,7 +308,7 @@ def get_context_file_audio(dataset):
         audio = lb.util.fix_length(
                 audio,
                 size=nr_windows * GLOBAL_LENGTH * sr,
-                mode='minimum',
+                mode=PAD_FUNC,
             ).reshape(nr_windows, -1)
         audio = audio[:-1] # discard the last window, because it was probably padded
         
@@ -456,7 +457,7 @@ def collect_audio_segments():
 def create_dataset():
     data = collect_audio_segments()
     
-    file_name = f"unknown_sounds_{RATIO_WITHIN_FILE}_within_file_{RATIO_DIFF_FILE}_diff_file_{GLOBAL_LENGTH}s"
+    file_name = f"unknown_sounds_{RATIO_WITHIN_FILE}_within_{RATIO_DIFF_FILE}_diff_{GLOBAL_LENGTH}s_pad_{PAD_FUNC}"
     with h5py.File(f"data/{file_name}.h5", "w") as f:
         write_dataset_to_file(f, data)
         
