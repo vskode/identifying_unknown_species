@@ -106,7 +106,9 @@ def get_audio(file, target_start, target_end, src_dir, other_target_segments):
         if start == target_start:
             target_idx = idx
         start, end = int(start*sr), int(end*sr)
+        # noise segments before annotations are in even-numbered indices
         segments.append(raw_audio[last_end:start])
+        # annotated segments are in odd-numbered indices
         segments.append(raw_audio[start:end])
         last_end = end
     
@@ -116,15 +118,27 @@ def get_audio(file, target_start, target_end, src_dir, other_target_segments):
     audio_dict['before'] = {'audio': segments[0], 'start': 0}
     
     # these are the segments inbetween annotated segments
+    # we're only collecting the even-numbered indices, hence 
+    # we are only collecting noise
     for i in range(int(len(segments)/2)):
         if i > 0 and i != target_idx and len(segments[2*i]) > sr:
-            audio_dict[i] = {'audio': segments[2*i],
-                             'start': segment_indices[i-1][1]}
+            audio_dict[i] = {
+                'audio': segments[2*i],
+                # the noise starts with the end of the previous annotated timestamp
+                'start': segment_indices[i-1][1]
+                }
             
+    # finally we collect the noise at the end of the file
     audio_dict['after'] = {'audio': raw_audio[last_end:], 'start': last_end/sr}
     
+    # the audio_dict now contains one annotated segment and the rest is noise
+    # because we only took one odd-numbered index from segments, that's the
+    # current target annotation based on the annotation from the dataframe 
+    # that was passed to this file, the rest are the even-numbered indices
+    # of the segments array, which are all noise in between annotations
+    
     audio_padded_dict = dict()
-    starts = []
+    starts, ends = [], []
     
     # now create a dictionary where we create padded segments each corresponding to the
     # GLOBAL_LENGTH and named the same way as the previous dictionary
@@ -138,9 +152,30 @@ def get_audio(file, target_start, target_end, src_dir, other_target_segments):
                 size=nr_windows * GLOBAL_LENGTH * sr,
                 mode='minimum',
             ).reshape(nr_windows, -1)
+        if False:#Sanity check
+            import matplotlib.pyplot as plt
+            fig, axes = plt.subplots(1,audio_padded_dict[key].shape[0])
+            for idx, ax in enumerate(axes):
+                S = lb.feature.melspectrogram(
+                    y=audio_padded_dict[key][idx],
+                    sr=sr,
+                    fmax=8000
+                    )
+                S_dB = lb.power_to_db(S)
+                img = lb.display.specshow(S_dB, ax=ax)
+            fig.savefig('sanity_check.png')
+                
         if not key == 'during':
             starts.extend(np.arange(nr_windows) * GLOBAL_LENGTH + d['start'])
+            ends.extend(np.arange(1, nr_windows) * GLOBAL_LENGTH + d['start'])
+            
+            # For the last ends entry:
+            # take the last starts entry and add the modulo of
+            # the length of audio in seconds by the global length
+            # this should correspond to the fragment length in seconds
+            ends.append(starts[-1] + len(audio)/sr % GLOBAL_LENGTH)
     starts.sort()
+    ends.sort()
     
     # create a context_audio list that contains all context audio segments
     context_audio = []
@@ -152,33 +187,34 @@ def get_audio(file, target_start, target_end, src_dir, other_target_segments):
     if 'after' in audio_padded_dict:
         context_audio.extend(audio_padded_dict['after'])
     # ensure the number of starting points and the context audio segments line up
-    assert len(context_audio) == len(starts)
-    return (audio_padded_dict['during'], context_audio, starts), sr
+    assert len(context_audio) == len(starts) == len(ends)
+    return (audio_padded_dict['during'], context_audio, starts, ends), sr
 
 # get all target embeddings
 
-def remove_segments_that_are_already_context(starts, data, combined):
+def remove_segments_that_are_already_context(starts, ends, data, combined):
     prev_starts = np.array(data['start'])[
         np.array(data['filename'])==np.array(data['filename'][-1])
         ]
     remove = []
     for i in range(len(combined)):
         if starts[i] in prev_starts:
-            remove.append(starts[i])
-    for start in remove:
+            remove.append((starts[i], ends[i]))
+    for start, end in remove:
         idx = np.where(starts==start)[0][0]
         starts.remove(start)
+        ends.remove(end)
         combined = np.vstack([combined[:idx], combined[idx+1:]])
     return combined
     
 
-def get_random_within_file_windows(context, starts, data):
+def get_random_within_file_windows(context, starts, ends, data):
     if len(context) > 0:
         combined = np.vstack(context)
     else:
         return []
     
-    combined = remove_segments_that_are_already_context(starts, data, combined)
+    combined = remove_segments_that_are_already_context(starts, ends, data, combined)
 
             
     if len(combined) >= RATIO_WITHIN_FILE:
@@ -192,7 +228,7 @@ def get_random_within_file_windows(context, starts, data):
     # write the index of the embedding to data['embed_idx']
     for idx in idxs:
         data['start'].append(starts[idx])
-        data['end'].append(starts[idx] + GLOBAL_LENGTH)
+        data['end'].append(ends[idx])
     
     return combined[idxs]
 
@@ -208,6 +244,7 @@ def get_other_target_segments_from_same_file(df, current_idx):
         
 
 def get_target_audio(dataset, data, df, src_dir):
+    # df = df[df.species == 'Black-bellied Plover']
     for idx, event in tqdm(df.iterrows(), 
                            total=len(df), 
                            desc=f'get {dataset} target audio'):
@@ -225,7 +262,7 @@ def get_target_audio(dataset, data, df, src_dir):
             other_target_segments
             )
         
-        during, context, starts = audio_tup
+        during, context, starts, ends = audio_tup
 
         if len(data['audio']) == 0:
             data['audio'] = during
@@ -240,7 +277,7 @@ def get_target_audio(dataset, data, df, src_dir):
         data['length_of_annotation'].extend([event.end - event.start] * len(during))
         data['label'].extend([event.species] * len(during))
         
-        windows = get_random_within_file_windows(context, starts, data)
+        windows = get_random_within_file_windows(context, starts, ends, data)
         if len(windows) > 0:
             data['audio'] = np.vstack([data['audio'], windows])
         
@@ -401,7 +438,7 @@ def collect_audio_segments():
         'length_of_annotation': [],
     }
     
-    for dataset in ['arctic', 'wabad', 'anura']:
+    for dataset in ['arctic', 'wabad', 'anura']:#['arctic', 'wabad', 'anura']
     
         df = pd.read_csv(f'data/{dataset}_anomals.csv', index_col=0)
         src_dir = Path('data/target_species') / (dataset + '_dataset')
