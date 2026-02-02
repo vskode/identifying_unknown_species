@@ -96,9 +96,6 @@ import librosa as lb
 def get_audio(file, target_start, target_end, src_dir, other_target_segments):
     path = list(src_dir.rglob(file))[0]
     raw_audio, sr = lb.load(path)
-    if USE_TUKEY_FILTER:
-        tukey_filter = tukey(len(audio), alpha=0.01)
-        audio = tukey_filter * audio
     
     # get all the start and end positions of target segments
     segment_indices = [(target_start, target_end), *other_target_segments]
@@ -154,6 +151,9 @@ def get_audio(file, target_start, target_end, src_dir, other_target_segments):
         audio = d['audio']
         if len(audio) == 0:
             continue
+        if USE_TUKEY_FILTER:
+            tukey_filter = tukey(len(audio), alpha=0.01)
+            audio = tukey_filter * audio
         nr_windows = int(np.ceil(len(audio) / sr / GLOBAL_LENGTH))
         audio_padded_dict[key] = lb.util.fix_length(
                 audio,
