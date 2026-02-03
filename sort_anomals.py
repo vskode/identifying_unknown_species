@@ -9,7 +9,7 @@ SEED = 42 # ensure that always the same context files get selected
 GLOBAL_LENGTH = 3 # 5s is the standard for bird volcalizations
 src_path = '/media/siriussound/Extreme SSD/Recordings'
 SRCS = {
-    'anura': f'{src_path}/Amphibians/AnuranSet/AnuranSet',
+    'anura': f'{src_path}/terrestrial/Amphibians/AnuranSet/AnuranSet',
     'wabad': f'{src_path}/terrestrial/Birds/WABAD',
     'arctic': f'{src_path}/terrestrial/Birds/ArcticBirdSounds/DataS1/audio_annots'
     }
